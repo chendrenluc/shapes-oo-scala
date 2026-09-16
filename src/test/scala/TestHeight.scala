@@ -18,10 +18,10 @@ class TestHeight extends AnyFunSuite{
     assert(apply(basicGroup) == 2)
   }
   test("Simple Group") {
-    assert(apply(simpleGroup) == 2)
+    assert(apply(simpleGroup) == 3)
   }
   test("Complex Group") {
-    assert(apply(complexGroup) == 4)
+    assert(apply(complexGroup) == 6)
   }
 }
 end TestHeight
