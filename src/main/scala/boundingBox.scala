@@ -21,8 +21,8 @@ object boundingBox:
       val boxes = shapes.map(apply)
       val minX = boxes.map(_.x).min
       val minY = boxes.map(_.y).min
-      val maxX = boxes.map(b => b.x + b.shape.width).max
-      val maxY = boxes.map(b => b.y + b.shape.height).max
+      val maxX = boxes.map { case Location(x, y, Rectangle(w, _)) => x + w }.max
+      val maxY = boxes.map { case Location(x, y, Rectangle(_, h)) => y + h }.max
       val width = maxX - minX
       val height = maxY - minY
       Location(minX, minY, Rectangle(width, height))
